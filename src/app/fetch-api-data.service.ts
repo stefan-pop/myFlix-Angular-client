@@ -101,6 +101,38 @@ export class FetchApiDataService {
 			catchError(this.handleError)
 		);
 	}
+
+	// Api call to fetch the user's details
+	public getUser(username: string): Observable<any> {
+		const token = localStorage.getItem('token');
+		return this.http.get(
+			apiUrl + `users/${username}`,
+			{headers: new HttpHeaders(
+				{
+					Authorization: `Bearer ${token}`,
+				}
+			)}
+		).pipe(
+			map(this.extractResponseData),
+			catchError(this.handleError)
+		);
+	}
+
+	// Api call to fetch the list of favorite movies of the user
+	public getFavMovies(username: string): Observable<any> {
+		const token = localStorage.getItem('token');
+		return this.http.get(
+			apiUrl + `users/favorites/${username}`,
+			{headers: new HttpHeaders(
+				{
+					Authorization: `Bearer ${token}`,
+				}
+			)}
+		).pipe(
+			map(this.extractResponseData),
+			catchError(this.handleError)
+		);
+	}
 	
 	// Api call to add a movie to favorite list
 	public addMovieToFav(username: string, movieId: string): Observable<any> {
