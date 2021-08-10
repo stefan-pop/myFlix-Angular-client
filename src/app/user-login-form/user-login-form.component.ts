@@ -35,12 +35,14 @@ export class UserLoginFormComponent implements OnInit {
 			localStorage.setItem('user', JSON.stringify(response.user));
 			console.log(response);
 			this.snackBar.open('Successful Login', 'OK', {
-				duration: 2000
+				duration: 2000,
+				panelClass: 'success'
 			});
 		}, (response) => {
 			console.log(response);
 			this.snackBar.open('Login failed', 'OK', {
-				duration: 2000
+				duration: 2000,
+				panelClass: 'error'
 			});
 		});
 	}
