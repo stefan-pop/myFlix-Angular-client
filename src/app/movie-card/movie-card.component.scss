@@ -1,3 +1,27 @@
 .content {
-    height: 80vh;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+.movies-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 20px;
+    display: flex;
+}
+
+.card {
+    padding: 20px;
+    text-align: center;
+    margin-right: 5px;
+    background-color: rgb(218, 231, 236);
+}
+
+.mat-card-actions {
+    width: 300px;
 }
