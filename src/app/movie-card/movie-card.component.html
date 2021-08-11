@@ -1,1 +1,11 @@
-<p>movie-card works!</p>
+<div class="content">
+    <mat-card *ngFor="let movie of movies; index as i" style='margin-bottom: 20px'>
+        <mat-card-header>
+            <mat-card-title>{{movie.title}}</mat-card-title>
+        </mat-card-header>     
+        <img mat-card-image src={{movie.imagePath}} alt="Movie's image" />
+        <mat-card-content>
+            {{movie.description}}
+        </mat-card-content> 
+    </mat-card>
+</div>
