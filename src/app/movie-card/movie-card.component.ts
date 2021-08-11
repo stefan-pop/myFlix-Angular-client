@@ -34,7 +34,6 @@ export class MovieCardComponent implements OnInit {
 	getGenre(name: any, description: any) {
 		this.dialog.open(GenreComponent, {
 			data: {name, description},
-			width: "500px"
 		})
 		console.log(name)
 	}
