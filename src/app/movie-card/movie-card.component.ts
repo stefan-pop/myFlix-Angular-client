@@ -8,7 +8,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class MovieCardComponent implements OnInit {
 
-  constructor() { }
+	// Variable that holds the array of movies returned by the API
+	movies: any[] = [];
 
   ngOnInit(): void {
   }
