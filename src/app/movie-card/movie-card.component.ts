@@ -15,4 +15,14 @@ export class MovieCardComponent implements OnInit {
   }
 	constructor( public fetchApiData: FetchApiDataService) { }
 
+
+	// Method that fetched the movies form the API and assingns the respone to "movie" variable.
+	getAllMovies(): void {
+		this.fetchApiData.getMovies().subscribe((response: any) => {
+			this.movies = response;
+			console.log(this.movies);
+			return this.movies;
+		})
+	}
+
 }
