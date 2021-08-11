@@ -1,0 +1,48 @@
+.navbar-wrapper {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 80%;
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        & > button {
+            color: rgb(13, 168, 173);
+            font-size: 22px;
+            transition: all 0.4s;
+
+            &:hover {
+                color: rgb(6, 89, 92);
+                background-color: crimson;
+                color: white;
+            }
+        }
+        .nav-links {
+            & > button {
+                margin-right: 10px;
+                color: rgb(13, 168, 173);
+                font-size: 18px;
+                transition: all 0.4s;
+
+                &:hover {
+                    color: rgb(6, 89, 92);
+                    background-color: crimson;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-wrapper {
+        width: 100%;
+    }
+}
+
