@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { GenreComponent } from '../genre/genre.component';
 
 @Component({
 	selector: 'app-movie-card',
