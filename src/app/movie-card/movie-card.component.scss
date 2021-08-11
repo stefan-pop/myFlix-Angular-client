@@ -1,12 +1,14 @@
 .content {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 40px);
     position: relative;
     overflow: auto;
+    margin: 0 20px;
 }
 
 .movies-wrapper {
     position: absolute;
+    z-index: -2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
