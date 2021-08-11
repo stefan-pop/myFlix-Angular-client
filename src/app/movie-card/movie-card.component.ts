@@ -11,10 +11,11 @@ export class MovieCardComponent implements OnInit {
 	// Variable that holds the array of movies returned by the API
 	movies: any[] = [];
 
-  ngOnInit(): void {
-  }
 	constructor( public fetchApiData: FetchApiDataService) { }
 
+	ngOnInit(): void {
+		this.getAllMovies()
+	}
 
 	// Method that fetched the movies form the API and assingns the respone to "movie" variable.
 	getAllMovies(): void {
