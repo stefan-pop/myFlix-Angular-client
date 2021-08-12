@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
 
 @Component({
 	selector: 'app-movie-card',
@@ -41,6 +42,12 @@ export class MovieCardComponent implements OnInit {
 	getDirector(name: any, bio: any, birth: any, death: any) {
 		this.dialog.open(DirectorComponent, {
 			data: {name, bio, birth, death}
+		})
+	}
+
+	getSynopsis(title: any, imagePath: any, description: any) {
+		this.dialog.open(SynopsisComponent, {
+			data: {title, imagePath, description}
 		})
 	}
 }
