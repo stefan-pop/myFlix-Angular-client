@@ -1,0 +1,12 @@
+.img-wrapper {
+    text-align: center;
+    background-color: rgb(218, 231, 236);
+    padding: 10px;
+    .movie-img {
+        max-width: 300px;
+        width: 100%;
+        max-height: auto;
+        height: auto;
+        margin: 0;
+    }
+}

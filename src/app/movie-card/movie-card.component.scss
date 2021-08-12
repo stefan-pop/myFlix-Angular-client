@@ -1,28 +1,39 @@
 .content {
     height: 100%;
-    width: calc(100% - 40px);
     position: relative;
     overflow: auto;
     margin: 0 20px;
+
+    .movies-wrapper {
+        margin: 50px auto;
+        width: 80%;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            margin: 10px;
+            padding: 20px;
+            max-width: 310px;
+            text-align: center;
+            margin-right: 5px;
+            background-color: rgb(218, 231, 236);
+            flex: 1 1 auto;
+
+            & > img {
+                max-width: 270px;
+                width: 100%;
+                height: auto;
+            }
+
+            .mat-card-header {
+                justify-content: space-evenly;
+            }
+        }
+    }
 }
 
-.movies-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    padding: 20px;
-    display: flex;
-}
-
-.card {
-    padding: 20px;
-    text-align: center;
-    margin-right: 5px;
-    background-color: rgb(218, 231, 236);
-}
-
-.mat-card-actions {
-    width: 300px;
+.mat-dialog-container {
+    height: 100%;
 }
