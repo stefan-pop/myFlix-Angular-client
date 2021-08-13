@@ -35,6 +35,7 @@ export class MovieCardComponent implements OnInit {
 		})
 	}
 
+	// Display genre details in a dialog
 	getGenre(name: any, description: any) {
 		this.dialog.open(GenreComponent, {
 			data: {name, description},
@@ -42,12 +43,14 @@ export class MovieCardComponent implements OnInit {
 		console.log(name)
 	}
 
+	// Display director details in a dialog
 	getDirector(name: any, bio: any, birth: any, death: any) {
 		this.dialog.open(DirectorComponent, {
 			data: {name, bio, birth, death}
 		})
 	}
 
+	// Display movie synopsis in a dialog
 	getSynopsis(title: any, imagePath: any, description: any) {
 		this.dialog.open(SynopsisComponent, {
 			data: {title, imagePath, description}
