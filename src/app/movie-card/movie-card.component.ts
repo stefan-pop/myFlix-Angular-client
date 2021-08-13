@@ -84,4 +84,18 @@ export class MovieCardComponent implements OnInit {
 		}
 	}
 
+	// Remove a movie from favorites
+	remove(username: string, id: string) {
+		if (this.isFav(id)) {
+			this.fetchApiData.removeMovieFromFav(username, id).subscribe(response => {
+				this.snackbar.open('Removed from favorites', 'OK', {
+					duration: 1000,
+					panelClass: 'error'
+				})
+				localStorage.setItem('user', JSON.stringify(response));
+				return this.favMoviesList =  JSON.parse(localStorage.getItem('user')!).favorite_movies;
+			})
+		}
+	}
+
 }
