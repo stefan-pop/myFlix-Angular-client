@@ -1,2 +1,23 @@
 <app-nav-bar></app-nav-bar>
-<p>user-profile works!</p>
+<br> <br> <br>
+<div class="profile">
+    <div class="user">
+        <h1 id="name">{{userProfile.username}}</h1> <hr> <br>
+        <div class="details">
+            <p>Birthday:</p>
+            <p>{{userProfile.birth_date | date}}</p>
+        </div>
+        <div class="details">
+            <p>Email:</p>
+            <p>{{userProfile.email}}</p>
+        </div> <br>
+        <!-- Next line represents the list of favorite movies. It is a component that is only rendered if it contains at least 1 movie -->
+        <app-favorite-movies></app-favorite-movies>
+
+        <div class="manage_profile">
+            <button mat-raised-button color="accent" (click)="openUpdateComponent()">Update profile</button>
+            <button mat-raised-button color="warn" (click)="deleteAccount(userProfile.username)"> Delete account</button>
+        </div>
+    </div>
+</div>
+
