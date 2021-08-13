@@ -62,4 +62,12 @@ export class MovieCardComponent implements OnInit {
 			data: {title, imagePath, description}
 		})
 	}
+
+	// From here downwards are the methods for add or remove a movie to favorite list
+
+	// Check if a movie is already in the list of favorites
+	isFav(id: string) {
+		return this.favMoviesList.includes(id);
+	}
+
 }
