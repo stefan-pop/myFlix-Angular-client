@@ -1,1 +1,57 @@
-<p>update-profile works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Update profile details!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="newUser.username"
+                    placeholder="New username"
+                    type="text"
+                    name="username"
+                    required
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="newUser.pwd"
+                    placeholder="New Password"
+                    type="password"
+                    name="pwd"
+                    required
+                /> 
+            </mat-form-field>
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="newUser.email"
+                    type = "email"
+                    placeholder="New email"
+                    name="email"
+                    required
+                />
+            </mat-form-field>
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="newUser.birth_date"
+                    type = "date"
+                    placeholder="Birthday"  
+                    name="birth_date"
+                />
+              </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button
+            mat-raised-button
+            (click)="updateUser()"
+            color="primary"
+        >Update profile
+        </button>
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-card-actions>
+</mat-card>
