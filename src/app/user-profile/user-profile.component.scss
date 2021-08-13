@@ -1,10 +1,12 @@
 
 .profile {
-    width: 80%;
-    margin: 0 auto;
-    background-color:rgb(218, 231, 236);
+    width: 70%;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px 5px #000000;
+    margin: 40px auto;
+    background-color:#0DA8AD;
     padding: 20px;
-    color: rgb(13, 168, 173);
+    color: rgb(247, 245, 248);
 
     .details {
         display: flex;

@@ -2,7 +2,7 @@
     height: 100%;
     position: relative;
     overflow: auto;
-    margin: 0 20px;
+    margin: 0;
 
     .movies-wrapper {
         margin: 50px auto;
@@ -20,6 +20,7 @@
             margin-right: 5px;
             background-color: rgb(218, 231, 236);
             flex: 1 1 auto;
+            box-shadow: 5px 5px 15px 5px #000000;
 
             & > img {
                 max-width: 270px;

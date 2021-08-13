@@ -1,9 +1,8 @@
 .navbar-wrapper {
     position: fixed;
     background-color: black;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
     z-index: 4;
     width: 100%;
 
@@ -26,7 +25,7 @@
         }
         .nav-links {
             & > button {
-                margin-right: 10px;
+                margin-right: 20px;
                 color: rgb(13, 168, 173);
                 font-size: 18px;
                 transition: all 0.4s;
