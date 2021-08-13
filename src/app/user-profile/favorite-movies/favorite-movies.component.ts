@@ -8,8 +8,11 @@ import { FetchApiDataService } from 'src/app/fetch-api-data.service';
 })
 export class FavoriteMoviesComponent implements OnInit {
 
-	// get the list of fav movies ids from local storage
-	favMoviesId = JSON.parse(localStorage.getItem('user')!).favorite_movies;
+	// get user from local storage
+	user: any = JSON.parse(localStorage.getItem('user')!);
+
+	// get the list of fav movies ids from the user
+	favMoviesId = this.user.favorite_movies;
 
 	// result of "getFavMovies" method that filteres all the movies based on the ids
 	favMovieList: any[] = [];
@@ -30,5 +33,15 @@ export class FavoriteMoviesComponent implements OnInit {
 				return this.favMoviesId.indexOf(m._id) >= 0;
 			});
 		})
+	}
+
+	// Remove a movie form favorites from within this component
+	remove(username: string, id: string) {
+			this.fetchApiData.removeMovieFromFav(username, id).subscribe(response => {
+				localStorage.setItem('user', JSON.stringify(response));
+				// trigger the rerender of list
+				this.getFavMovies();
+				return this.favMoviesId =  JSON.parse(localStorage.getItem('user')!).favorite_movies;
+			})
 	}
 }
