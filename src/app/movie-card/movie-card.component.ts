@@ -70,4 +70,18 @@ export class MovieCardComponent implements OnInit {
 		return this.favMoviesList.includes(id);
 	}
 
+	// Add a movie to the list
+	add(username: string, id: string) {
+		if (!this.isFav(id)) {
+			this.fetchApiData.addMovieToFav(username, id).subscribe(response => {
+				this.snackbar.open('Added to favorites', 'OK', {
+					duration: 1000,
+					panelClass: 'success'
+				})
+				localStorage.setItem('user', JSON.stringify(response));
+				return this.favMoviesList =  JSON.parse(localStorage.getItem('user')!).favorite_movies;
+			})
+		}
+	}
+
 }
