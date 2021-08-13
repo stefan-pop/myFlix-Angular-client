@@ -1,0 +1,22 @@
+
+.profile {
+    width: 80%;
+    margin: 0 auto;
+    background-color:rgb(218, 231, 236);
+    padding: 20px;
+    color: rgb(13, 168, 173);
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        max-width: 400px;
+        width: 100%;
+        text-align: right;
+    }
+
+    .manage_profile {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+}

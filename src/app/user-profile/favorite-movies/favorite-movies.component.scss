@@ -1,0 +1,17 @@
+.custom_card {
+    display: flex;
+    flex-wrap: wrap;
+    .card_wrapper {
+        max-width: 180px;
+        text-align: center;
+        margin: 5px 10px 0 0;
+        padding: 5px;
+        background-color: rgb(233, 25, 67);
+        border-radius: 4px;
+        img {
+            max-width: 160px;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
