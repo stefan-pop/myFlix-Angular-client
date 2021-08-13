@@ -1,0 +1,9 @@
+<div *ngIf="favMoviesIdLength">
+    <h1>Favorite movies</h1>
+    <div class="custom_card">
+        <div *ngFor="let movie of favMovieList" class="card_wrapper">
+            <p>{{movie.title}}</p>
+            <img src={{movie.imagePath}} alt="Movie's picture">
+        </div>
+    </div>
+</div>
