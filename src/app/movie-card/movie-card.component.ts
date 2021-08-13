@@ -35,7 +35,6 @@ export class MovieCardComponent implements OnInit {
 	getAllMovies(): void {
 		this.fetchApiData.getMovies().subscribe((response: any) => {
 			this.movies = response;
-			console.log(this.movies);
 			return this.movies;
 		})
 	}
@@ -45,7 +44,6 @@ export class MovieCardComponent implements OnInit {
 		this.dialog.open(GenreComponent, {
 			data: {name, description},
 		})
-		console.log(name)
 	}
 
 	// Display director details in a dialog

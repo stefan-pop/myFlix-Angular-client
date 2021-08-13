@@ -34,7 +34,6 @@ export class UserProfileComponent implements OnInit {
 	deleteAccount(username: string) {
 		if (confirm("Are you sure?")) {
 			this.fetchApiData.deleteUser(username).subscribe(response => {
-				console.log(response);
 				localStorage.clear();
 				this.snackbar.open('Your account has been deleted', 'OK', {
 					duration: 2000,
