@@ -29,7 +29,17 @@
                 >
                     Synopsis
                 </button>
-                <mat-icon>favorite_border</mat-icon>
+
+                <ng-container *ngIf="!isFav(movie._id); then Fav; else notFav"></ng-container>
+
+                <ng-template #Fav>
+                    <mat-icon (click)="add(user.username, movie._id)" color="accent">favorite_border</mat-icon>
+                </ng-template>
+          
+                <ng-template #notFav>
+                    <mat-icon (click)="remove(user.username, movie._id)" color="accent">favorite</mat-icon>
+                </ng-template>
+          
             </mat-card-actions>
         </mat-card>
     </div>
