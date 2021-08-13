@@ -38,6 +38,7 @@ export class UserProfileComponent implements OnInit {
 				localStorage.clear();
 				this.snackbar.open('Your account has been deleted', 'OK', {
 					duration: 2000,
+					verticalPosition: 'top',
 				});
 			})
 			setTimeout(() => {

@@ -40,13 +40,15 @@ export class UserLoginFormComponent implements OnInit {
 			console.log(response);
 			this.snackBar.open('Successful Login', 'OK', {
 				duration: 2000,
-				panelClass: 'success'
+				panelClass: 'success',
+				verticalPosition: 'top',
 			});
 		}, (response) => {
 			console.log(response);
 			this.snackBar.open('Login failed', 'OK', {
 				duration: 2000,
-				panelClass: 'error'
+				panelClass: 'error',
+				verticalPosition: 'top',
 			});
 		});
 	}

@@ -28,13 +28,15 @@ export class UpdateProfileComponent implements OnInit {
 			localStorage.setItem('user', JSON.stringify(response));
 			this.snackbar.open('Your credentials have been updated', 'OK', {
 				duration: 1000,
-				panelClass: 'success'
+				panelClass: 'success',
+				verticalPosition: 'top',
 			})
 		}, (response) => {
 			console.log(response);
 			this.snackbar.open('Try again', 'OK', {
 				duration: 1000,
-				panelClass: 'error'
+				panelClass: 'error',
+				verticalPosition: 'top',
 			})
 		})
 		setTimeout(() => {

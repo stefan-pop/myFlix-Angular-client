@@ -75,7 +75,8 @@ export class MovieCardComponent implements OnInit {
 			this.fetchApiData.addMovieToFav(username, id).subscribe(response => {
 				this.snackbar.open('Added to favorites', 'OK', {
 					duration: 1000,
-					panelClass: 'success'
+					panelClass: 'success',
+					verticalPosition: 'top',
 				})
 				localStorage.setItem('user', JSON.stringify(response));
 				return this.favMoviesList =  JSON.parse(localStorage.getItem('user')!).favorite_movies;
@@ -89,7 +90,8 @@ export class MovieCardComponent implements OnInit {
 			this.fetchApiData.removeMovieFromFav(username, id).subscribe(response => {
 				this.snackbar.open('Removed from favorites', 'OK', {
 					duration: 1000,
-					panelClass: 'error'
+					panelClass: 'error',
+					verticalPosition: 'top',
 				})
 				localStorage.setItem('user', JSON.stringify(response));
 				return this.favMoviesList =  JSON.parse(localStorage.getItem('user')!).favorite_movies;
