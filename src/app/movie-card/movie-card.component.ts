@@ -17,6 +17,12 @@ export class MovieCardComponent implements OnInit {
 	// Variable that holds the array of movies returned by the API
 	movies: any[] = [];
 
+	// User object
+	user: any = JSON.parse(localStorage.getItem('user')!);
+
+	// Array of favorite movies ids
+	favMoviesList: any[] = this.user.favorite_movies;
+
 	constructor( 
 		public snackbar: MatSnackBar,
 		public fetchApiData: FetchApiDataService,
