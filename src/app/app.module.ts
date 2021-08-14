@@ -27,9 +27,10 @@ import { DirectorComponent } from './director/director.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
 import { FavoriteMoviesComponent } from './user-profile/favorite-movies/favorite-movies.component';
 import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
+import { AuthGuard } from './auth.guard';
 
 const appRoutes: Routes = [
-	{path: 'welcome', component: WelcomePageComponent},
+	{path: 'welcome', component: WelcomePageComponent, canActivate: [AuthGuard]},
 	{path: 'movies', component: MovieCardComponent},
 	{path: 'profile', component: UserProfileComponent},
 	{path: '', redirectTo: 'welcome', pathMatch: 'prefix'},
