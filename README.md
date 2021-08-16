@@ -1,6 +1,32 @@
 # MyFlixAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+## Description
+Angular app that represents the frontend of a restful API.
+
+See the live version [here](https://stefan-pop.github.io/myFlix-Angular-client/welcome1).
+
+## Features
+* Display a welcome view where users will be able to either log in or register an account.
+* Once authenticated, the user can view all movies.
+* Upon clicking on "synopsis", "director" or "genre" a dialog will open, where additional movie details will be displayed.
+* Upon clicking on the "heart" icon, a movie will be added (full heart) or removed (empty heart) from the list of favorite movies, which can be viewed in the profile page.
+* The user can also remove a movie from the list of favorite movies, from within the profile page. By hovering over a movie, the card will flip, revealing a delete icon.
+* In the profile page, the user is given the option to either update or delete his account.
+
+## Technologies
+* Angular
+* Angular Material
+* Typescript
+* RxJs
+
+## Important
+The app is NOT using form validation.
+
+When registering or updating a user's account, make sure to apply the following instructions:
+ * username - longer than 5 characters, only alphanumeric, no spaces.
+ * password - longer than 8 characters
+ * a valid email
+
 
 ## Development server
 
