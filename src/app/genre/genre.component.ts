@@ -6,6 +6,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 	templateUrl: './genre.component.html',
 	styleUrls: ['./genre.component.scss']
 })
+/**
+ * This class renders data about the genre of a movie.
+ */
 export class GenreComponent implements OnInit {
 
 	constructor( @Inject(MAT_DIALOG_DATA) public data: any ) { }

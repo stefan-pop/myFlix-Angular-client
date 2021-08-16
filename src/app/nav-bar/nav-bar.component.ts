@@ -7,6 +7,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 	templateUrl: './nav-bar.component.html',
 	styleUrls: ['./nav-bar.component.scss']
 })
+/**
+ * This is the Navigation Bar
+ */
 export class NavBarComponent implements OnInit {
 
 	// username from local storage
@@ -19,7 +22,9 @@ export class NavBarComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	// Logout method
+	/**
+	 * Logout method that clears the local storage making the app unavailable if the user does't log back in
+	 */
 	logOut(): void {
 		this.snackBar.open(`Goodbye ${this.username}`, 'OK', {
 			duration: 2000,

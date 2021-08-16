@@ -7,6 +7,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 	templateUrl: './update-profile.component.html',
 	styleUrls: ['./update-profile.component.scss']
 })
+
+/**
+ * This component represents the form where a user can update his info
+ */
 export class UpdateProfileComponent implements OnInit {
 
 	// Variable that holds the new user's info from the inputs in the view.
@@ -22,7 +26,9 @@ export class UpdateProfileComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	// Method for updating user's info
+	/**
+	 * Method that sends the inputs of the form in the template to the server, to update the user's info
+	 */
 	updateUser(): void {
 		this.fetchApiData.updateUser(this.username, this.newUser).subscribe(response => {
 			localStorage.setItem('user', JSON.stringify(response));

@@ -10,6 +10,10 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 	templateUrl: './user-profile.component.html',
 	styleUrls: ['./user-profile.component.scss']
 })
+
+/**
+ * This component represents the profile of a user
+ */
 export class UserProfileComponent implements OnInit {
 
 	userProfile = JSON.parse(localStorage.getItem('user')!);
@@ -23,14 +27,19 @@ export class UserProfileComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	// Method for opening UpdateProfileComponent in a dialog
+	/**
+	 * Method that opens the "UpdateProfileComponent" in an Angular Material's dialog
+	 */
 	openUpdateComponent(): void {
 		this.dialog.open(UpdateProfileComponent, {
 			width: '280px'
 		})
 	}
 
-	// Method for deleting a user account
+	/**
+	 * Delete account method
+	 * @param username 
+	 */
 	deleteAccount(username: string) {
 		if (confirm("Are you sure?")) {
 			this.fetchApiData.deleteUser(username).subscribe(response => {

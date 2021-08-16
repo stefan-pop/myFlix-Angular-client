@@ -6,6 +6,10 @@ import { FetchApiDataService } from 'src/app/fetch-api-data.service';
 	templateUrl: './favorite-movies.component.html',
 	styleUrls: ['./favorite-movies.component.scss']
 })
+
+/**
+ * This component represents the list of favorite movies. It is a child of "UserProfileComponent" and it is rendered dynamically (only if it contains at least 1 movie).
+ */
 export class FavoriteMoviesComponent implements OnInit {
 
 	// get user from local storage
@@ -26,7 +30,9 @@ export class FavoriteMoviesComponent implements OnInit {
 		this.getFavMovies();
 	}
  
-	// This method makes the API cal to fetch all movies and filters the result based on the content of "favMoviesId" property of this class.
+	/**
+	 *  This method makes the API cal to fetch all movies and filters the result based on the content of "favMoviesId" property of this class
+	 */
 	getFavMovies(): void {
 		this.fetchApiData.getMovies().subscribe((response: any) => {
 			this.favMovieList = response.filter((m:any) => {
@@ -35,7 +41,11 @@ export class FavoriteMoviesComponent implements OnInit {
 		})
 	}
 
-	// Remove a movie form favorites from within this component
+	/**
+	 * Method that removes a movie form favorites from within this component
+	 * @param username 
+	 * @param id 
+	 */
 	remove(username: string, id: string) {
 			this.fetchApiData.removeMovieFromFav(username, id).subscribe(response => {
 				localStorage.setItem('user', JSON.stringify(response));

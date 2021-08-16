@@ -11,6 +11,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 	templateUrl: './movie-card.component.html',
 	styleUrls: ['./movie-card.component.scss']
 })
+/**This class represents the homepage of the app where all the movies are displayed */
 export class MovieCardComponent implements OnInit {
 
 	// Variable that holds the array of movies returned by the API
@@ -31,7 +32,9 @@ export class MovieCardComponent implements OnInit {
 		this.getAllMovies()
 	}
 
-	// Method that fetched the movies form the API and assingns the respone to "movie" variable.
+	/**
+	 *  Method that fetches all the movies form the API and assingns the response to the "movie" property of this class.
+	 */
 	getAllMovies(): void {
 		this.fetchApiData.getMovies().subscribe((response: any) => {
 			this.movies = response;
@@ -39,21 +42,36 @@ export class MovieCardComponent implements OnInit {
 		})
 	}
 
-	// Display genre details in a dialog
+	/**
+	 * Display genre details in a dialog
+	 * @param name 
+	 * @param description 
+	 */
 	getGenre(name: any, description: any) {
 		this.dialog.open(GenreComponent, {
 			data: {name, description},
 		})
 	}
 
-	// Display director details in a dialog
+	/**
+	 * Display director details in a dialog
+	 * @param name 
+	 * @param bio 
+	 * @param birth 
+	 * @param death 
+	 */
 	getDirector(name: any, bio: any, birth: any, death: any) {
 		this.dialog.open(DirectorComponent, {
 			data: {name, bio, birth, death}
 		})
 	}
 
-	// Display movie synopsis in a dialog
+	/**
+	 * Display movie synopsis in a dialog
+	 * @param title 
+	 * @param imagePath 
+	 * @param description 
+	 */
 	getSynopsis(title: any, imagePath: any, description: any) {
 		this.dialog.open(SynopsisComponent, {
 			data: {title, imagePath, description}
@@ -62,12 +80,20 @@ export class MovieCardComponent implements OnInit {
 
 	// From here downwards are the methods for add or remove a movie to favorite list
 
-	// Check if a movie is already in the list of favorites
+	/**
+	 * Method that checks if a movie is already in the list of favorites
+	 * @param id 
+	 * @returns 
+	 */
 	isFav(id: string) {
 		return this.favMoviesList.includes(id);
 	}
 
-	// Add a movie to the list
+	/**
+	 * 
+	 * @param username Add a movie to favorite movies list
+	 * @param id 
+	 */
 	add(username: string, id: string) {
 		if (!this.isFav(id)) {
 			this.fetchApiData.addMovieToFav(username, id).subscribe(response => {
@@ -82,7 +108,11 @@ export class MovieCardComponent implements OnInit {
 		}
 	}
 
-	// Remove a movie from favorites
+	/**
+	 * 
+	 * @param username Remove a movie from favorite movies list within this component
+	 * @param id 
+	 */
 	remove(username: string, id: string) {
 		if (this.isFav(id)) {
 			this.fetchApiData.removeMovieFromFav(username, id).subscribe(response => {
